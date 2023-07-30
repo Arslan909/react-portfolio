@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import projects from "./projects.json"
+import Projectpin from './components/Projectpin';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App(){
+    const ProjectpinArray = projects.map((item) => {
+      return(
+          <Projectpin 
+            img = {item.project_logo_image}
+            website = {item.project_website}
+            description = {item.project_description}
+          />
+      )
+    })
+    return(
+        <div>
+            <h3>Projects</h3>   
+            {ProjectpinArray}
+        </div>
+    )
 }
-
-export default App;

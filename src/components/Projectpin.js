@@ -11,7 +11,7 @@ export default function Projectpin(prop){
 
       <div className="not-img-container">
 
-        <a href ={prop.website} className="project_website">{prop.website}</a>
+        <h3  className="project_website">{prop.website}</h3>
         <p className="project_description">{prop.description}</p>
 
       </div>
